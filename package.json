@@ -30,13 +30,13 @@
     "README.md",
     "LICENSE"
   ],
-  "main": "./dist/counter.umd.cjs",
-  "module": "./dist/counter.js",
+  "main": "./dist/check-update.umd.cjs",
+  "module": "./dist/check-update.js",
   "types": "./index.d.ts",
   "exports": {
     "types": "./index.d.ts",
-    "import": "./dist/counter.js",
-    "require": "./dist/counter.umd.cjs"
+    "import": "./dist/check-update.js",
+    "require": "./dist/check-update.umd.cjs"
   },
   "scripts": {
     "dev": "vite",
