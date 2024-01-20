@@ -1,5 +1,6 @@
 {
   "name": "check-dist-update",
+  "description": "A simple tool to check dist update",
   "private": false,
   "version": "0.0.0",
   "type": "module",
