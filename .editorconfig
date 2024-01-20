@@ -1,0 +1,21 @@
+# 根文件
+root = true
+
+# 匹配全部文件
+[*]
+# 字符集 utf-8
+charset = utf-8
+# 行尾换行
+end_of_line = lf
+# 缩进列数
+indent_size = 2
+# 使用空格缩进
+indent_style = space
+# 文末插入新行
+insert_final_newline = true
+# 每行最大长度
+max_line_length = 120
+# tab 所占列数
+tab_width = 2
+# 去除行尾的空白字符
+trim_trailing_whitespace = true
