@@ -25,6 +25,6 @@ export interface checkOptions {
   cacheKey?: string
 }
 
-export function clearTimer():void
+export function clearTimer(): void
 
-export function checkUpdate(options: checkOptions):void
+export function checkUpdate(options: checkOptions): void
