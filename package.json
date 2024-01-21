@@ -7,7 +7,7 @@
   "license": "MIT",
   "author": {
     "name": "SWSJTX",
-    "email": "iceNode@163.com",
+    "email": "icenode@163.com",
     "url": "https://github.com/SWSJTX"
   },
   "repository": {
@@ -20,7 +20,8 @@
   "keywords": [
     "auto",
     "checkUpdate",
-    "dist"
+    "dist",
+    "check-dist-update"
   ],
   "files": [
     "dist",
@@ -37,7 +38,6 @@
     "require": "./dist/check-update.umd.cjs"
   },
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
     "lint": "eslint --ext .js,.cjs --fix ./lib",
     "format": "prettier --write ./lib",
