@@ -1,4 +1,17 @@
 Check Dist Update Changelog
+### [0.0.2](https://github.com/SWSJTX/check-dist-update/compare/v0.0.1...v0.0.2) (2024-01-21)
+
+
+### ♻️ Code Refactoring
+
+* change url and node config ([936efa6](https://github.com/SWSJTX/check-dist-update/commit/936efa6140ae439f00782ed3198516af4108be7b))
+
+
+### ✨ Features
+
+* change version config ([06b9345](https://github.com/SWSJTX/check-dist-update/commit/06b93457847c3d964e750355c3324d8a52b7dfab))
+* update project config ([df3bc76](https://github.com/SWSJTX/check-dist-update/commit/df3bc763ec664b1260d8cfb2f15238787da8d57a))
+
 ### 0.0.1 (2024-01-20)
 
 
