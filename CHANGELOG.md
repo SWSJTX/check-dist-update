@@ -1,4 +1,11 @@
 Check Dist Update Changelog
+### [0.0.5](https://github.com/SWSJTX/check-dist-update/compare/v0.0.4...v0.0.5) (2024-01-22)
+
+
+### ✏️Documentation
+
+* supply package config ([c86abde](https://github.com/SWSJTX/check-dist-update/commit/c86abded57b09345fa71831a5a9b7a4f1f054547))
+
 ### [0.0.4](https://github.com/SWSJTX/check-dist-update/compare/v0.0.3...v0.0.4) (2024-01-22)
 
 
