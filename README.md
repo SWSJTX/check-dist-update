@@ -65,5 +65,3 @@ setTimeout(() => {
 |   url    |       Detection address URL       |  string  | `${location.origin}/index.html` |
 |    cb    | Detects update callback function  | function |            () => {}             |
 | cacheKey |            Cached Key             |  string  |         last_signature          |
-
-

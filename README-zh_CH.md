@@ -66,5 +66,3 @@ setTimeout(() => {
 |   url    |            检测地址 URL            |  string  | `${location.origin}/index.html` |
 |    cb    |          检测更新回调函数           | function |            () => {}             |
 | cacheKey |             缓存 key               |  string  |         last_signature          |
-
-
