@@ -14,6 +14,9 @@
     "type": "git",
     "url": "git+https://github.com/SWSJTX/check-dist-update.git"
   },
+  "bugs": {
+    "url": "https://github.com/SWSJTX/check-dist-update/issues"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -28,6 +31,7 @@
     "lib",
     "index.d.ts",
     "README.md",
+    "README-zh_CH.md",
     "LICENSE"
   ],
   "main": "./dist/check-update.umd.cjs",
