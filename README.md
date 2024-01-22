@@ -1,5 +1,7 @@
 # check-dist-update
 
+English | [中文文档](/README-zh_CH.md)
+
 A simple tool to check dist version update
 
 This is a tool to detect the change of dist version by detecting the updates of js and css file signature values referenced by the entrance page file in dist constructed by webpack, vite, etc
@@ -21,7 +23,7 @@ pnpm add check-dist-update
 
 - import
 ```javascript
-import { checkUpdate } from 'check-dist-update'
+import { checkUpdate, clearTimer } from 'check-dist-update'
 
 checkUpdate({
   url: `${location.origin}/index.html`,
@@ -30,6 +32,11 @@ checkUpdate({
   cb: () => {},
   cacheKey: 'last_signature'
 })
+
+// cancel detection
+setTimeout(() => {
+  clearTimer()
+}, 1000 * 60)
 ```
 
 - require
@@ -43,9 +50,14 @@ check.checkUpdate({
   cb: () => {},
   cacheKey: 'last_signature'
 })
+
+// cancel detection
+setTimeout(() => {
+  check.clearTimer()
+}, 1000 * 60)
 ```
 
-# params config
+# checkUpdate params config
 |   name   |            description            |   type   |             default             |
 |:--------:|:---------------------------------:|:--------:|:-------------------------------:|
 |   init   |     Initial request interval      |  number  |              10000              |

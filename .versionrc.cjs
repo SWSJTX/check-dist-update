@@ -4,7 +4,7 @@ module.exports = {
   types: [
     { type: 'feat', section: '✨ Features' },
     { type: 'fix', section: '🐛 Bug Fixes' },
-    { type: 'docs', section: '✏️Documentation', hidden: true },
+    { type: 'docs', section: '✏️Documentation' },
     { type: 'style', section: '💄 Styles', hidden: true },
     { type: 'refactor', section: '♻️ Code Refactoring' },
     { type: 'perf', section: '⚡ Performance Improvements' },
