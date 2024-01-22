@@ -1,4 +1,12 @@
 Check Dist Update Changelog
+### [0.0.4](https://github.com/SWSJTX/check-dist-update/compare/v0.0.3...v0.0.4) (2024-01-22)
+
+
+### ✏️Documentation
+
+* add README-zh_CH.md ([0ed69ea](https://github.com/SWSJTX/check-dist-update/commit/0ed69ea50fee25db057870d742f6cc7115716a16))
+* update README.md ([b31f83f](https://github.com/SWSJTX/check-dist-update/commit/b31f83f98e386412cbaef2d8df29a6082f36be84))
+
 ### [0.0.3](https://github.com/SWSJTX/check-dist-update/compare/v0.0.2...v0.0.3) (2024-01-22)
 
 
