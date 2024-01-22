@@ -1,21 +1,21 @@
-# 根文件
+# root file
 root = true
 
-# 匹配全部文件
+# match all files
 [*]
-# 字符集 utf-8
+#
 charset = utf-8
-# 行尾换行
+# Line wrap at the end of the line
 end_of_line = lf
-# 缩进列数
+# Indent the number of columns
 indent_size = 2
-# 使用空格缩进
+# Space indent style
 indent_style = space
-# 文末插入新行
+# Insert new line at the end of text
 insert_final_newline = true
-# 每行最大长度
+# Maximum length of each row
 max_line_length = 120
-# tab 所占列数
+# Number of columns occupied by tab
 tab_width = 2
-# 去除行尾的空白字符
+# Remove the whitespace at the end of the line
 trim_trailing_whitespace = true
