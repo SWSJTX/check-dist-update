@@ -1,4 +1,11 @@
 Check Dist Update Changelog
+### [0.0.3](https://github.com/SWSJTX/check-dist-update/compare/v0.0.2...v0.0.3) (2024-01-22)
+
+
+### ♻️ Code Refactoring
+
+* update package.json ([a622f78](https://github.com/SWSJTX/check-dist-update/commit/a622f78b74e08be98caec1e01e8f1c5d6baf1db3))
+
 ### [0.0.2](https://github.com/SWSJTX/check-dist-update/compare/v0.0.1...v0.0.2) (2024-01-21)
 
 
