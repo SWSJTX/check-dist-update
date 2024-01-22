@@ -1,6 +1,8 @@
 # check-dist-update
 
-A simple tool to check dist version update by detecting file signature changes
+A simple tool to check dist version update
+
+This is a tool to detect the change of dist version by detecting the updates of js and css file signature values referenced by the entrance page file in dist constructed by webpack, vite, etc
 
 
 # Install
