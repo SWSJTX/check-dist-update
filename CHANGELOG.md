@@ -1,4 +1,11 @@
 Check Dist Update Changelog
+### [0.0.6](https://github.com/SWSJTX/check-dist-update/compare/v0.0.5...v0.0.6) (2024-01-23)
+
+
+### 🐛 Bug Fixes
+
+* modify lint-staged config error ([07a151f](https://github.com/SWSJTX/check-dist-update/commit/07a151f7d9391a53339c7c16af9b6ff7a083b8ce))
+
 ### [0.0.5](https://github.com/SWSJTX/check-dist-update/compare/v0.0.4...v0.0.5) (2024-01-22)
 
 
