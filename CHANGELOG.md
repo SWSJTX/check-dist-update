@@ -1,4 +1,11 @@
 Check Dist Update Changelog
+### [0.0.9](https://github.com/SWSJTX/check-dist-update/compare/v0.0.8...v0.0.9) (2024-01-24)
+
+
+### 🐛 Bug Fixes
+
+* page hide error ([9213c3a](https://github.com/SWSJTX/check-dist-update/commit/9213c3a5cde0371c75eaa2753cfca51f9742c68b))
+
 ### [0.0.8](https://github.com/SWSJTX/check-dist-update/compare/v0.0.7...v0.0.8) (2024-01-24)
 
 
