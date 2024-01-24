@@ -1,4 +1,11 @@
 Check Dist Update Changelog
+### [0.0.8](https://github.com/SWSJTX/check-dist-update/compare/v0.0.7...v0.0.8) (2024-01-24)
+
+
+### ✏️Documentation
+
+* update README ([dc0bd85](https://github.com/SWSJTX/check-dist-update/commit/dc0bd8571ff2cfa2bebbbb790d6a9d8d3a15eddb))
+
 ### [0.0.7](https://github.com/SWSJTX/check-dist-update/compare/v0.0.6...v0.0.7) (2024-01-24)
 
 
