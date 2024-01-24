@@ -1,4 +1,11 @@
 Check Dist Update Changelog
+### [0.0.7](https://github.com/SWSJTX/check-dist-update/compare/v0.0.6...v0.0.7) (2024-01-24)
+
+
+### ✨ Features
+
+* No polling occurs when the page is hidden ([b439c69](https://github.com/SWSJTX/check-dist-update/commit/b439c69bf99ce970abb6a260e90fe6e0fbdefa6f))
+
 ### [0.0.6](https://github.com/SWSJTX/check-dist-update/compare/v0.0.5...v0.0.6) (2024-01-23)
 
 
