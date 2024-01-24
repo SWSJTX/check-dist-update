@@ -1,6 +1,6 @@
 # check-dist-update
 
-English | [中文文档](/README-zh_CH.md)
+English | [中文文档](./README-zh_CH.md)
 
 A simple tool to check dist version update
 

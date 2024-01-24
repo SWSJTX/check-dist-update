@@ -1,6 +1,6 @@
 # check-dist-update
 
-简体中文 | [English](/README.md)
+简体中文 | [English](./README.md)
 
 一个检测 dist 版本更新的简单工具
 
