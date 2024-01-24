@@ -1,15 +1,15 @@
-let g = 1e4, u = 1e3 * 60;
-const m = new RegExp(/<script(?:\s+[^>]*)?>(.*?)<\/script\s*>|<link(?:\s+[^>]*)?>(.*?)/gi);
+let o = 1e4, g = 1e3 * 60;
+const v = new RegExp(/<script(?:\s+[^>]*)?>(.*?)<\/script\s*>|<link(?:\s+[^>]*)?>(.*?)/gi);
 let i = "last_signature";
 const w = localStorage.getItem(i);
-let f = w ? JSON.parse(w) : [];
-const p = `${location.origin}/index.html`;
-let d = "", r, s = !1, h = !1;
-const v = async () => {
+let u = w ? JSON.parse(w) : [];
+const h = `${location.origin}/index.html`;
+let f = "", d, s = !1, m = !1;
+const p = async () => {
   try {
-    if (!d)
+    if (!f)
       return s = !0, "";
-    const t = await fetch(`${d}?t=${Date.now()}`);
+    const t = await fetch(`${f}?t=${Date.now()}`);
     if (t.status === 200) {
       const e = await t.text();
       return s = !1, e;
@@ -18,47 +18,47 @@ const v = async () => {
   } catch {
     return s = !0, "";
   }
-}, S = (t) => (t == null ? void 0 : t.match(m)) || [], I = async (t, e, a) => {
+}, S = (t) => (t == null ? void 0 : t.match(v)) || [], b = async (t, e, a) => {
   if (!window.navigator.onLine || s)
     return !1;
   const n = t.length, l = Array.from(new Set(t.concat(e)));
   if (n !== l.length) {
-    if (f = e, localStorage.setItem(i, JSON.stringify(f)), !n)
+    if (u = e, localStorage.setItem(i, JSON.stringify(u)), !n)
       return !1;
     a();
   }
 };
-let c = () => {
+let r = () => {
   console.log("The system version has been updated！");
 };
-const o = async (t) => {
-  const e = await v(), a = S(e);
-  await I(f, a, t);
+const c = async (t) => {
+  const e = await p(), a = S(e);
+  await b(u, a, t);
 }, y = () => {
-  r && clearInterval(r);
+  clearInterval(d);
 }, T = ({
-  init: t = g,
-  loop: e = u,
-  cb: a = c,
-  url: n = p,
+  init: t = o,
+  loop: e = g,
+  cb: a = r,
+  url: n = h,
   cacheKey: l = i
 }) => {
-  d = n, i = l, c = a, g = t, u = e, h = !0, setTimeout(async () => {
-    await o(a), y(), r = setInterval(async () => {
-      await o(a);
+  f = n, i = l, r = a, o = t, g = e, m = !0, setTimeout(async () => {
+    await c(a), y(), d = setInterval(async () => {
+      await c(a);
     }, e);
   }, t);
 };
-document.addEventListener("visibilitychange", b);
-const b = (t) => {
+document.addEventListener("visibilitychange", I);
+const I = (t) => {
   var a, n;
-  if (!h)
+  if (!m)
     return;
-  (((a = t.target) == null ? void 0 : a.visibilityState) || ((n = t.target) == null ? void 0 : n.webkitVisibilityState)) !== "hidden" ? setTimeout(async () => {
-    await o(c), y(), r = setInterval(async () => {
-      await o(c);
-    }, u);
-  }, g) : y();
+  (((a = t.target) == null ? void 0 : a.visibilityState) || ((n = t.target) == null ? void 0 : n.webkitVisibilityState)) === "visible" ? setTimeout(async () => {
+    await c(r), y(), d = setInterval(async () => {
+      await c(r);
+    }, g);
+  }, o) : y();
 };
 export {
   T as checkUpdate,
