@@ -48,9 +48,7 @@ const c = async (t) => {
       await c(a);
     }, e);
   }, t);
-};
-document.addEventListener("visibilitychange", I);
-const I = (t) => {
+}, I = (t) => {
   var a, n;
   if (!m)
     return;
@@ -60,6 +58,7 @@ const I = (t) => {
     }, g);
   }, o) : y();
 };
+document.addEventListener("visibilitychange", I);
 export {
   T as checkUpdate,
   y as clearTimer
