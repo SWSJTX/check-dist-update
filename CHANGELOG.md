@@ -1,4 +1,11 @@
 Check Dist Update Changelog
+### [0.0.10](https://github.com/SWSJTX/check-dist-update/compare/v0.0.9...v0.0.10) (2024-01-24)
+
+
+### 🐛 Bug Fixes
+
+* visible bug ([9d88e16](https://github.com/SWSJTX/check-dist-update/commit/9d88e1618fc55c7e458d0801b853636c16b4398a))
+
 ### [0.0.9](https://github.com/SWSJTX/check-dist-update/compare/v0.0.8...v0.0.9) (2024-01-24)
 
 
