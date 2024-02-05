@@ -24,7 +24,7 @@ pnpm add check-dist-update
 
 - import 方式
 ```javascript
-import { checkUpdate, clearTimer } from 'check-dist-update'
+import { checkUpdate, cancelDetect } from 'check-dist-update'
 
 checkUpdate({
   url: `${location.origin}/index.html`,
@@ -36,7 +36,7 @@ checkUpdate({
 
 // 取消检测
 setTimeout(() => {
-  clearTimer()
+  cancelDetect()
 }, 1000 * 60)
 ```
 
@@ -54,7 +54,7 @@ check.checkUpdate({
 
 // 取消检测
 setTimeout(() => {
-  check.clearTimer()
+  check.cancelDetect()
 }, 1000 * 60)
 ```
 

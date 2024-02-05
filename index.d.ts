@@ -29,6 +29,6 @@ interface Options {
   cacheKey?: string
 }
 
-export function clearTimer(): void
+export function cancelDetect(): void
 
 export function checkUpdate(options: Options): void

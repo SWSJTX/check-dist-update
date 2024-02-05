@@ -1,5 +1,5 @@
 module.exports = {
-  header: 'Check Dist Update Changelog',
+  header: 'Changelog',
   releaseCommitMessageFormat: 'chore(release): v{{currentTag}} :tada:',
   types: [
     { type: 'feat', section: '✨ Features' },
