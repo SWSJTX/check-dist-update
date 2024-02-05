@@ -1,4 +1,11 @@
-Check Dist Update Changelog
+Changelog
+## [0.1.0](https://github.com/SWSJTX/check-dist-update/compare/v0.0.10...v0.1.0) (2024-02-05)
+
+
+### ✨ Features
+
+* refactor function with worker ([47033c8](https://github.com/SWSJTX/check-dist-update/commit/47033c8ce7f6eb638fdec09ab23138b3d2058549))
+
 ### [0.0.10](https://github.com/SWSJTX/check-dist-update/compare/v0.0.9...v0.0.10) (2024-01-24)
 
 
