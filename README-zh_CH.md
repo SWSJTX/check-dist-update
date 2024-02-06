@@ -6,16 +6,16 @@
 
 这是一个通过检测由 webpack、vite 等构建的 dist 中的入口页面文件所引用的 js 和 css 文件签名值的变化来检测 dist 版本变化的工具
 
-
-
 # 安装方式
 
 ```shell
 npm install check-dist-update
 ```
+
 ```shell
 yarn add check-dist-update
 ```
+
 ```shell
 pnpm add check-dist-update
 ```
@@ -23,6 +23,7 @@ pnpm add check-dist-update
 # 使用方式
 
 - import 方式
+
 ```javascript
 import { checkUpdate, cancelDetect } from 'check-dist-update'
 
@@ -41,6 +42,7 @@ setTimeout(() => {
 ```
 
 - require 方式
+
 ```javascript
 const check = require('check-dist-update')
 
@@ -59,10 +61,11 @@ setTimeout(() => {
 ```
 
 # checkUpdate 接收参数设置
-|   名称   |                描述               |   类型   |             默认值             |
-|:--------:|:---------------------------------:|:--------:|:-------------------------------:|
-|   init   |            初始请求间隔            |  number  |              10000              |
-|   loop   |            循环请求间隔            |  number  |              60000              |
-|   url    |            检测地址 URL            |  string  | `${location.origin}/index.html` |
-|    cb    |          检测更新回调函数           | function |            () => {}             |
-| cacheKey |             缓存 key               |  string  |         last_signature          |
+
+|   名称    |       描述      |   类型   |             默认值              |
+| :------: | :------------: | :------: | :-----------------------------: |
+|   init   |   初始请求间隔    |  number  |              10000              |
+|   loop   |   循环请求间隔    |  number  |              60000              |
+|   url    |   检测地址 URL   |  string  | `${location.origin}/index.html` |
+|    cb    |  检测更新回调函数  | function |            () => {}             |
+| cacheKey |    缓存 key     |  string  |         last_signature          |

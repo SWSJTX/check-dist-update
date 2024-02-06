@@ -5,3 +5,4 @@
 .gitignore
 node_modules/
 dist/
+CHANGELOG.md

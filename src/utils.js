@@ -4,7 +4,7 @@
  * @returns {Worker}
  */
 const createWorker = (func) => {
-  const blob = new Blob(["(" + func.toString() + ")()"]);
+  const blob = new Blob(['(' + func.toString() + ')()'])
   const url = window.URL.createObjectURL(blob)
   const worker = new Worker(url)
   window.URL.revokeObjectURL(url)
@@ -40,25 +40,30 @@ const workerFunc = () => {
         noCompare = true
         return resolve('')
       }
-      fetch(`${websiteUrl}?t=${Date.now()}`).then(res => {
-        if (res.status === 200) {
-          res.text().then(html => {
-            noCompare = false
-            return resolve(html)
-          }).catch(e => {
-            console.log(e)
+      fetch(`${websiteUrl}?t=${Date.now()}`)
+        .then((res) => {
+          if (res.status === 200) {
+            res
+              .text()
+              .then((html) => {
+                noCompare = false
+                return resolve(html)
+              })
+              .catch((e) => {
+                console.log(e)
+                noCompare = true
+                return resolve('')
+              })
+          } else {
             noCompare = true
             return resolve('')
-          })
-        } else {
+          }
+        })
+        .catch((e) => {
+          console.log(e)
           noCompare = true
           return resolve('')
-        }
-      }).catch(e => {
-        console.log(e)
-        noCompare = true
-        return resolve('')
-      })
+        })
     })
   }
 
@@ -78,11 +83,7 @@ const workerFunc = () => {
 
   self.onmessage = (e) => {
     const { code, data } = e.data
-    const {
-      url = websiteUrl,
-      init = initInterval,
-      loop = loopInterval
-    } = data || {}
+    const { url = websiteUrl, init = initInterval, loop = loopInterval } = data || {}
 
     websiteUrl = url
     initInterval = init
@@ -93,7 +94,7 @@ const workerFunc = () => {
      * Get sign and compare difference
      */
     const compareHandler = () => {
-      getResource().then(html => {
+      getResource().then((html) => {
         const sign = getSignature(html)
         self.postMessage({
           sign,
@@ -124,14 +125,10 @@ const workerFunc = () => {
  */
 const cancelWorker = (worker) => {
   worker.postMessage({
-    code: "pause",
+    code: 'pause'
   })
   worker.terminate()
   worker = null
 }
 
-export {
-  createWorker,
-  workerFunc,
-  cancelWorker
-}
+export { createWorker, workerFunc, cancelWorker }

@@ -3,24 +3,24 @@ interface Options {
    * Initial request interval
    * default: 10s
    */
-  init?: number,
+  init?: number
 
   /**
    * Loop request interval
    * default: 60s
    */
-  loop?: number,
+  loop?: number
 
   /**
    * Detects update callback function
    */
-  cb?: () => void,
+  cb?: () => void
 
   /**
    * Detection address URL
    * default: `${location.origin}/index.html`
    */
-  url?: string,
+  url?: string
 
   /**
    * Cached Key

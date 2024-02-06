@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import { babel } from '@rollup/plugin-babel'
-import { DEFAULT_EXTENSIONS } from "@babel/core";
+import { DEFAULT_EXTENSIONS } from '@babel/core'
 
 export default defineConfig({
   build: {
@@ -12,8 +12,8 @@ export default defineConfig({
     rollupOptions: {
       plugins: [
         babel({
-          babelHelpers: "bundled",
-          exclude: "node_modules/**",
+          babelHelpers: 'bundled',
+          exclude: 'node_modules/**',
           extensions: [...DEFAULT_EXTENSIONS]
         })
       ]

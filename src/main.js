@@ -43,11 +43,11 @@ const visibilityChangeHandler = (e) => {
   const state = e.target?.visibilityState || e.target?.webkitVisibilityState
   if (state === 'visible') {
     worker.postMessage({
-      code: "resume",
+      code: 'resume'
     })
   } else {
     worker.postMessage({
-      code: "pause",
+      code: 'pause'
     })
   }
 }
@@ -60,19 +60,13 @@ const visibilityChangeHandler = (e) => {
  * @param {string} url Detection address URL
  * @param {string} cacheKey Cached Key
  */
-const checkUpdate = ({
-                       init,
-                       loop,
-                       cb = updateTrigger,
-                       url,
-                       cacheKey = signKey
-}) => {
+const checkUpdate = ({ init, loop, cb = updateTrigger, url, cacheKey = signKey }) => {
   signKey = cacheKey
   updateTrigger = cb
 
   worker = createWorker(workerFunc)
   worker.postMessage({
-    code: "start",
+    code: 'start',
     data: {
       init,
       loop,
@@ -97,7 +91,4 @@ const cancelDetect = () => {
   document.removeEventListener('visibilitychange', visibilityChangeHandler)
 }
 
-export {
-  cancelDetect,
-  checkUpdate
-}
+export { cancelDetect, checkUpdate }
