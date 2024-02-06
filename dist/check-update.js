@@ -1,99 +1,92 @@
-const I = (e) => {
-  const s = new Blob(["(" + e.toString() + ")()"]), n = window.URL.createObjectURL(s), t = new Worker(n);
-  return window.URL.revokeObjectURL(n), t;
-}, U = () => {
-  let e = 1e4, s = 1e3 * 60;
-  const n = new RegExp(/<script(?:\s+[^>]*)?>(.*?)<\/script\s*>|<link(?:\s+[^>]*)?>(.*?)/gi);
-  let t = `${location.origin}/index.html`, o, r = !1, c = !1;
-  const g = async () => {
-    try {
-      if (!t)
-        return r = !0, "";
-      const a = await fetch(`${t}?t=${Date.now()}`);
-      if (a.status === 200) {
-        const u = await a.text();
-        return r = !1, u;
-      } else
-        return r = !0, "";
-    } catch {
-      return r = !0, "";
-    }
-  }, y = (a) => (a == null ? void 0 : a.match(n)) || [], p = () => {
-    clearInterval(o);
+var M = function(e) {
+  var t = new Blob(["(" + e.toString() + ")()"]), a = window.URL.createObjectURL(t), r = new Worker(a);
+  return window.URL.revokeObjectURL(a), r;
+}, W = function() {
+  var e = 1e4, t = 1e3 * 60, a = new RegExp(/<script(?:\s+[^>]*)?>(.*?)<\/script\s*>|<link(?:\s+[^>]*)?>(.*?)/gi), r = "".concat(location.origin, "/index.html"), l = void 0, i = !1, v = !1, p = function() {
+    return new Promise(function(n) {
+      if (!r)
+        return i = !0, n("");
+      fetch("".concat(r, "?t=").concat(Date.now())).then(function(u) {
+        if (u.status === 200)
+          u.text().then(function(d) {
+            return i = !1, n(d);
+          }).catch(function(d) {
+            return console.log(d), i = !0, n("");
+          });
+        else
+          return i = !0, n("");
+      }).catch(function(u) {
+        return console.log(u), i = !0, n("");
+      });
+    });
+  }, m = function(n) {
+    return (n == null ? void 0 : n.match(a)) || [];
+  }, f = function() {
+    clearInterval(l);
   };
-  return self.onmessage = (a) => {
-    const { code: u, data: v } = a.data, {
-      url: h = t,
-      init: S = e,
-      loop: k = s
-    } = v || {};
-    t = h, e = S, s = k, c = !0;
-    const w = async () => {
-      const L = await g(), R = y(L);
-      self.postMessage({
-        sign: R,
-        noCompare: r
+  return self.onmessage = function(s) {
+    var n = s.data, u = n.code, d = n.data, h = d || {}, y = h.url, U = y === void 0 ? r : y, k = h.init, _ = k === void 0 ? e : k, S = h.loop, I = S === void 0 ? t : S;
+    r = U, e = _, t = I, v = !0;
+    var $ = function() {
+      p().then(function(T) {
+        var E = m(T);
+        self.postMessage({
+          sign: E,
+          noCompare: i
+        });
       });
     };
     if (u === "pause")
-      p();
+      f();
     else {
-      if (!c)
+      if (!v)
         return;
-      setTimeout(async () => {
-        await w(), p(), o = setInterval(async () => {
-          await w();
-        }, s);
+      setTimeout(function() {
+        $(), f(), l = setInterval(function() {
+          $();
+        }, t);
       }, e);
     }
   }, self;
-}, x = (e) => {
+}, x = function(e) {
   e.postMessage({
     code: "pause"
-  }), e.terminate();
-};
-let i = null, l = "last_signature";
-const m = localStorage.getItem(l);
-let f = m ? JSON.parse(m) : [], b = !1, d = () => {
+  }), e.terminate(), e = null;
+}, c = null, g = "last_signature", L = localStorage.getItem(g), w = L ? JSON.parse(L) : [], R = !1, b = function() {
   console.log("The system version has been updated！");
-};
-const C = (e, s, n) => {
-  if (!window.navigator.onLine || b)
+}, H = function(e, t, a) {
+  if (!window.navigator.onLine || R)
     return !1;
-  const t = e.length, o = Array.from(new Set(e.concat(s)));
-  if (t !== o.length) {
-    if (f = s, localStorage.setItem(l, JSON.stringify(f)), !t)
+  var r = e.length, l = Array.from(new Set(e.concat(t)));
+  if (r !== l.length) {
+    if (w = t, localStorage.setItem(g, JSON.stringify(w)), !r)
       return !1;
-    n();
+    a();
   }
-}, E = ({
-  init: e,
-  loop: s,
-  cb: n = d,
-  url: t,
-  cacheKey: o = l
-}) => {
-  l = o, d = n, i = I(U), i.postMessage({
-    code: "start",
-    data: {
-      init: e,
-      loop: s,
-      url: t
-    }
-  }), i.onmessage = (r) => {
-    const { sign: c, noCompare: g } = r.data;
-    b = g, C(f, c, d);
-  };
-}, M = (e) => {
-  var n, t;
-  (((n = e.target) == null ? void 0 : n.visibilityState) || ((t = e.target) == null ? void 0 : t.webkitVisibilityState)) === "visible" ? i.postMessage({
+}, C = function(e) {
+  var t, a, r = ((t = e.target) === null || t === void 0 ? void 0 : t.visibilityState) || ((a = e.target) === null || a === void 0 ? void 0 : a.webkitVisibilityState);
+  r === "visible" ? c.postMessage({
     code: "resume"
-  }) : i.postMessage({
+  }) : c.postMessage({
     code: "pause"
   });
+}, O = function(e) {
+  var t = e.init, a = e.loop, r = e.cb, l = r === void 0 ? b : r, i = e.url, v = e.cacheKey, p = v === void 0 ? g : v;
+  g = p, b = l, c = M(W), c.postMessage({
+    code: "start",
+    data: {
+      init: t,
+      loop: a,
+      url: i
+    }
+  }), c.onmessage = function(m) {
+    var f = m.data, s = f.sign, n = f.noCompare;
+    R = n, H(w, s, b);
+  }, document.addEventListener("visibilitychange", C);
+}, D = function() {
+  c && x(c), document.removeEventListener("visibilitychange", C);
 };
-document.addEventListener("visibilitychange", M);
 export {
-  x as cancelDetect,
-  E as checkUpdate
+  D as cancelDetect,
+  O as checkUpdate
 };
