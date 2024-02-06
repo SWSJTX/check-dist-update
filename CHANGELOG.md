@@ -1,4 +1,16 @@
 Changelog
+### [0.1.1](https://github.com/SWSJTX/check-dist-update/compare/v0.1.0...v0.1.1) (2024-02-06)
+
+
+### 🐛 Bug Fixes
+
+* fixed event listening bug, degraded syntax ([465ad28](https://github.com/SWSJTX/check-dist-update/commit/465ad28a3d9e723d6ee37131546fffbaf56746bb))
+
+
+### ✨ Features
+
+* configure babel to be syntax-compatible ([1c8968c](https://github.com/SWSJTX/check-dist-update/commit/1c8968c3b666dea0c50ab4df8384db8bf71fa252))
+
 ## [0.1.0](https://github.com/SWSJTX/check-dist-update/compare/v0.0.10...v0.1.0) (2024-02-05)
 
 
