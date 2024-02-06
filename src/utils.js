@@ -34,25 +34,32 @@ const workerFunc = () => {
    * getResource
    * @returns {Promise<string>}
    */
-  const getResource = async () => {
-    try {
+  const getResource = () => {
+    return new Promise((resolve) => {
       if (!websiteUrl) {
         noCompare = true
-        return ''
+        return resolve('')
       }
-      const res = await fetch(`${websiteUrl}?t=${Date.now()}`)
-      if (res.status === 200) {
-        const html = await res.text()
-        noCompare = false
-        return html
-      } else {
+      fetch(`${websiteUrl}?t=${Date.now()}`).then(res => {
+        if (res.status === 200) {
+          res.text().then(html => {
+            noCompare = false
+            return resolve(html)
+          }).catch(e => {
+            console.log(e)
+            noCompare = true
+            return resolve('')
+          })
+        } else {
+          noCompare = true
+          return resolve('')
+        }
+      }).catch(e => {
+        console.log(e)
         noCompare = true
-        return ''
-      }
-    } catch (e) {
-      noCompare = true
-      return ''
-    }
+        return resolve('')
+      })
+    })
   }
 
   /**
@@ -84,14 +91,14 @@ const workerFunc = () => {
 
     /**
      * Get sign and compare difference
-     * @returns {Promise<void>}
      */
-    const compareHandler = async () => {
-      const html = await getResource()
-      const sign = getSignature(html)
-      self.postMessage({
-        sign,
-        noCompare
+    const compareHandler = () => {
+      getResource().then(html => {
+        const sign = getSignature(html)
+        self.postMessage({
+          sign,
+          noCompare
+        })
       })
     }
 
@@ -99,11 +106,11 @@ const workerFunc = () => {
       clearTimer()
     } else {
       if (!enable) return
-      setTimeout(async () => {
-        await compareHandler()
+      setTimeout(() => {
+        compareHandler()
         clearTimer()
-        timer = setInterval(async () => {
-          await compareHandler()
+        timer = setInterval(() => {
+          compareHandler()
         }, loopInterval)
       }, initInterval)
     }
@@ -115,15 +122,16 @@ const workerFunc = () => {
  * terminate worker
  * @param worker
  */
-const cancelDetect = (worker) => {
+const cancelWorker = (worker) => {
   worker.postMessage({
     code: "pause",
   })
   worker.terminate()
+  worker = null
 }
 
 export {
   createWorker,
   workerFunc,
-  cancelDetect
+  cancelWorker
 }

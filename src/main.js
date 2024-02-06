@@ -1,4 +1,4 @@
-import { createWorker, workerFunc, cancelDetect } from './utils'
+import { createWorker, workerFunc, cancelWorker } from './utils'
 
 let worker = null
 
@@ -39,7 +39,18 @@ const compare = (lastSign, curSign, cb) => {
   }
 }
 
-
+const visibilityChangeHandler = (e) => {
+  const state = e.target?.visibilityState || e.target?.webkitVisibilityState
+  if (state === 'visible') {
+    worker.postMessage({
+      code: "resume",
+    })
+  } else {
+    worker.postMessage({
+      code: "pause",
+    })
+  }
+}
 
 /**
  * check update
@@ -74,22 +85,17 @@ const checkUpdate = ({
     noCompare = noC
     compare(lastSignature, sign, updateTrigger)
   }
+
+  document.addEventListener('visibilitychange', visibilityChangeHandler)
 }
 
-const visibilityChangeHandler = (e) => {
-  const state = e.target?.visibilityState || e.target?.webkitVisibilityState
-  if (state === 'visible') {
-    worker.postMessage({
-      code: "resume",
-    })
-  } else {
-    worker.postMessage({
-      code: "pause",
-    })
-  }
+/**
+ * cancel detect version changes
+ */
+const cancelDetect = () => {
+  if (worker) cancelWorker(worker)
+  document.removeEventListener('visibilitychange', visibilityChangeHandler)
 }
-
-document.addEventListener('visibilitychange', visibilityChangeHandler)
 
 export {
   cancelDetect,
