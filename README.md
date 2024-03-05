@@ -69,3 +69,7 @@ setTimeout(() => {
 |   url    |      Detection address URL       |  string  | `${location.origin}/index.html` |
 |    cb    | Detects update callback function | function |            () => {}             |
 | cacheKey |            Cached Key            |  string  |         last_signature          |
+
+# Thanks
+This tool is affected by [` version polling `]（ https://www.npmjs.com/package/version-polling ）. Thank you very much for your inspiration!
+

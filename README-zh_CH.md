@@ -69,3 +69,6 @@ setTimeout(() => {
 |   url    |   检测地址 URL   |  string  | `${location.origin}/index.html` |
 |    cb    |  检测更新回调函数  | function |            () => {}             |
 | cacheKey |    缓存 key     |  string  |         last_signature          |
+
+# 鸣谢
+此工具受到  [`version-polling`](https://www.npmjs.com/package/version-polling) 的启发，在此特别感谢！
