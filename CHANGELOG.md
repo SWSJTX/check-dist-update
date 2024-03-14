@@ -1,4 +1,17 @@
 Changelog
+### [0.1.2](https://github.com/SWSJTX/check-dist-update/compare/v0.1.1...v0.1.2) (2024-03-14)
+
+
+### 🚀 Chore
+
+* add .browserslistrc ([717da0e](https://github.com/SWSJTX/check-dist-update/commit/717da0eb352e51aecbbbcc225b304b39a4a4fdb9))
+
+
+### ✏️Documentation
+
+* update README ([c974154](https://github.com/SWSJTX/check-dist-update/commit/c97415471d68a3963fc763a06494fe0129a9c1d7))
+* update README ([68adff8](https://github.com/SWSJTX/check-dist-update/commit/68adff8e6dd7471c4a4aa912097fec90535240a7))
+
 ### [0.1.1](https://github.com/SWSJTX/check-dist-update/compare/v0.1.0...v0.1.1) (2024-02-06)
 
 
